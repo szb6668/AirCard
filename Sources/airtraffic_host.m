@@ -68,13 +68,13 @@ int main(int argc, const char *argv[]) {
     @autoreleasepool {
         if (argc < 6 || argc % 2 != 0) {
             PrintJSON(@{ @"ok": @NO,
-                         @"error": @"usage: airtraffic_host udid id path [id path ...]" });
+                         @"error": @"用法：airtraffic_host 设备标识 素材标识 路径 [素材标识 路径 ...]" });
             return 64;
         }
 
         NSUInteger pairCount = (NSUInteger)(argc - 2) / 2;
         if (pairCount > 2048) {
-            PrintJSON(@{ @"ok": @NO, @"error": @"too many assets" });
+            PrintJSON(@{ @"ok": @NO, @"error": @"素材数量过多" });
             return 64;
         }
 
@@ -85,14 +85,14 @@ int main(int argc, const char *argv[]) {
             NSString *destination =
                 [NSString stringWithUTF8String:argv[index + 1]];
             if (!identifier.length || !destination.length) {
-                PrintJSON(@{ @"ok": @NO, @"error": @"empty argument" });
+                PrintJSON(@{ @"ok": @NO, @"error": @"参数不能为空" });
                 return 64;
             }
             [assets addObject:@{ @"identifier": identifier,
                                  @"destination": destination }];
         }
         if (!deviceIdentifier.length) {
-            PrintJSON(@{ @"ok": @NO, @"error": @"empty device identifier" });
+            PrintJSON(@{ @"ok": @NO, @"error": @"设备标识不能为空" });
             return 64;
         }
 
@@ -103,7 +103,7 @@ int main(int argc, const char *argv[]) {
             ATHostConnectionCreate((__bridge CFStringRef)deviceIdentifier);
         if (!connection) {
             PrintJSON(@{ @"ok": @NO,
-                         @"error": @"AirTraffic connection failed" });
+                         @"error": @"AirTraffic 连接失败" });
             return 2;
         }
 
@@ -121,7 +121,7 @@ int main(int argc, const char *argv[]) {
         if (!syncAllowed) {
             ATHostConnectionRelease(connection);
             PrintJSON(@{ @"ok": @NO,
-                         @"error": @"SyncAllowed not observed" });
+                         @"error": @"设备未允许同步" });
             return 3;
         }
 
@@ -149,7 +149,7 @@ int main(int argc, const char *argv[]) {
         if (!ready) {
             ATHostConnectionRelease(connection);
             PrintJSON(@{ @"ok": @NO,
-                         @"error": @"ReadyForSync not observed" });
+                         @"error": @"设备尚未准备好同步" });
             return 4;
         }
 
@@ -185,7 +185,7 @@ int main(int argc, const char *argv[]) {
         if (missing) {
             ATHostConnectionRelease(connection);
             PrintJSON(@{ @"ok": @NO,
-                         @"error": @"expected assets absent from manifest",
+                         @"error": @"同步清单中缺少预期素材",
                          @"missingCount": @(missing) });
             return 5;
         }

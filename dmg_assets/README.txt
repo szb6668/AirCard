@@ -1,41 +1,34 @@
 ============================================================
-              AirCard · Quick Start Guide
+                  AirCard · 快速上手
 ============================================================
 
-1. INSTALLATION:
-   Drag and drop the "AirCard" icon into the "Applications" folder.
+1. 安装
+   将 AirCard.app 放到你希望保存的位置，即可直接运行。
+   此汉化版默认保存在“工具箱/AirCard”目录中。
 
-2. FIRST LAUNCH (macOS Gatekeeper):
-   Since AirCard is built locally, macOS might show a standard security prompt on first launch.
-   
-   Method 1 (Recommended):
-   Right-click (Control-click) on AirCard in Applications -> click "Open" -> click "Open".
-   
-   Method 2 (via Terminal):
-   sudo xattr -cr /Applications/AirCard.app
+2. 首次打开
+   本应用使用临时签名，macOS 可能提示无法验证开发者。
+   在 Finder 中按住 Control 点按 AirCard.app，选择“打开”，再确认系统提示。
 
-3. ZERO PREREQUISITES:
-   AirCard is 100% self-contained for both Apple Silicon and Intel (x86) Macs.
-   No Homebrew, Python packages, or external tools required!
+3. 使用前准备
+   用 USB 连接并解锁 iPhone，在手机上选择“信任此电脑”。
+   Mac 端无需另外安装 Homebrew 或 Python 软件包。
 
-4. HOW TO USE:
-   [Apple Wallet Cards]
-   - Connect your iPhone via USB cable and tap "Trust this Computer".
-   - Open AirCard (the device status badge will turn green).
-   - Click "Scan Cards".
-   - On your iPhone, double-click the Side button, pass Face ID, and tap your card.
-   - Assign a custom skin image (click or drag & drop onto the card).
-   - Click "Flash Skins".
-   - Force-close the Wallet app on your iPhone to see your new designs.
+4. 更换钱包卡面
+   打开“钱包卡片”页，点“识别卡片”。
+   在 iPhone 上双击侧边按钮，通过面容 ID 验证，再点选卡片。
+   点击识别出的卡片选择图片，或直接把图片拖到卡片上。
+   点“写入卡面”。完成后，在 iPhone 上强制关闭“钱包”并重新打开。
 
-   [Passcode Themes (.passthm)]
-   - Switch to the "Passcode Themes" tab.
-   - Drag & drop a .passthm file (or select one via file picker).
-   - Preview the keypad artwork on the interactive mockup.
-   - Click "Apply Passcode Theme".
-   - Restart your iPhone.
-   * NOTE: Supports all system languages (RU, UK, EN, etc.) and Bold Text!
+5. 更换锁屏密码键盘
+   打开“密码键盘主题”页，导入 .passthm 主题包并检查预览。
+   点“写入密码键盘主题”，然后锁定 iPhone 查看效果；
+   如未更新，请重启 iPhone。
+
+6. 制作自己的主题
+   在“主题制作”中导入海报图片，或为数字键逐个添加图片。
+   调整位置和缩放后，可导出 .passthm 文件或直接写入 iPhone。
 
 ============================================================
-Developed by @mak5er & @Lumid-Off
+原项目作者：@mak5er、@Lumid-Off；简体中文界面为本地修改版。
 ============================================================

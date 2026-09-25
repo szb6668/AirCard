@@ -1,0 +1,10 @@
+AirCard scanner: Could not request device log streaming.\n	AirCard 扫描器：无法请求设备日志流。\n
+The device refused to start log streaming.	设备拒绝启动日志读取。
+AirCard scanner: Connected to the unified device log stream.\n	AirCard 扫描器：已连接设备日志流。\n
+AirCard scanner: iPhone not found. Reconnect it via USB.\n	AirCard 扫描器：未找到 iPhone，请重新插拔 USB 连接。\n
+AirCard scanner: Could not connect to the iPhone.\n	AirCard 扫描器：无法连接 iPhone。\n
+AirCard scanner: Unlock the iPhone and trust this Mac, then retry.\n	AirCard 扫描器：请解锁 iPhone 并信任这台 Mac，然后重试。\n
+AirCard scanner: Could not open the device log service. Unlock the iPhone and retry.\n	AirCard 扫描器：无法打开设备日志服务。请解锁 iPhone 后重试。\n
+invalid snapshot	快照无效
+unsafe media path	媒体文件路径不安全
+AirCard scanner: %s\n	AirCard 扫描器：%s\n

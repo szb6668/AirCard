@@ -27,7 +27,7 @@ cat << 'EOF' > "${CONTENTS_DIR}/Info.plist"
 <plist version="1.0">
 <dict>
     <key>CFBundleDevelopmentRegion</key>
-    <string>en</string>
+    <string>zh-Hans</string>
     <key>CFBundleExecutable</key>
     <string>AirCard</string>
     <key>CFBundleIdentifier</key>
@@ -37,7 +37,7 @@ cat << 'EOF' > "${CONTENTS_DIR}/Info.plist"
     <key>CFBundleName</key>
     <string>AirCard</string>
     <key>CFBundleDisplayName</key>
-    <string>AirCard</string>
+    <string>AirCard 简体中文</string>
     <key>CFBundleIconFile</key>
     <string>AppIcon</string>
     <key>CFBundlePackageType</key>
@@ -101,34 +101,29 @@ chmod -R 755 "$APP_DIR"
 xattr -cr "$APP_DIR" 2>/dev/null || true
 codesign --force --deep --sign - "$APP_DIR"
 
-echo "==> [6/6] Generating styled DMG (${APP_NAME}.dmg)..."
-DMG_STAGING="/tmp/aircard_dmg_staging"
-rm -rf "$DMG_STAGING"
-mkdir -p "$DMG_STAGING"
-cp -R "$APP_DIR" "$DMG_STAGING/"
-
-rm -f "build/${APP_NAME}.dmg"
-
-if command -v create-dmg >/dev/null 2>&1; then
-    create-dmg \
-        --volname "AirCard" \
-        --background "dmg_assets/background_700.png" \
-        --window-pos 200 120 \
-        --window-size 700 460 \
-        --icon-size 110 \
-        --icon "AirCard.app" 175 220 \
-        --hide-extension "AirCard.app" \
-        --app-drop-link 525 220 \
-        --add-file "README.txt" "dmg_assets/README.txt" 350 360 \
-        --filesystem APFS \
-        --overwrite \
-        "build/${APP_NAME}.dmg" \
-        "$DMG_STAGING"
-else
-    ln -s /Applications "$DMG_STAGING/Applications"
-    hdiutil create -volname "AirCard" -srcfolder "$DMG_STAGING" -ov -format UDZO "build/${APP_NAME}.dmg"
-fi
+echo "==> [6/6] Packaging verified Simplified Chinese DMG..."
+# Staging inside an APFS image avoids Finder metadata added by Desktop file
+# providers, which would otherwise invalidate the ad hoc app signature.
+DMG_MOUNT="$SCRIPT_DIR/build/package_mount"
+RW_DMG="$SCRIPT_DIR/build/AirCard-zh-Hans-rw.dmg"
+FINAL_DMG="$SCRIPT_DIR/build/AirCard-v1.2.4-简体中文.dmg"
+rm -f "$RW_DMG" "$FINAL_DMG"
+mkdir -p "$DMG_MOUNT"
+hdiutil create -size 32m -fs APFS -volname "AirCard 简体中文" "$RW_DMG" >/dev/null
+cleanup_mount() { hdiutil detach "$DMG_MOUNT" >/dev/null 2>&1 || true; }
+trap cleanup_mount EXIT
+hdiutil attach "$RW_DMG" -nobrowse -mountpoint "$DMG_MOUNT" >/dev/null
+ditto --norsrc --noextattr "$APP_DIR" "$DMG_MOUNT/AirCard.app"
+cp dmg_assets/README.txt "$DMG_MOUNT/使用说明.txt"
+ln -s /Applications "$DMG_MOUNT/Applications"
+xattr -cr "$DMG_MOUNT/AirCard.app"
+codesign --force --deep --sign - "$DMG_MOUNT/AirCard.app"
+codesign --verify --deep --strict "$DMG_MOUNT/AirCard.app"
+cleanup_mount
+trap - EXIT
+hdiutil convert "$RW_DMG" -format UDZO -o "$FINAL_DMG" >/dev/null
+hdiutil verify "$FINAL_DMG" >/dev/null
 
 echo "============================================================"
-echo "🎉 SUCCESS: build/${APP_NAME}.dmg is ready!"
+echo "🎉 SUCCESS: $FINAL_DMG is ready!"
 echo "============================================================"

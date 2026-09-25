@@ -206,7 +206,7 @@ def test_cmd_flash_passthm_fallback():
     assert mock_single.call_count > 50, f"Fallback should have written all files individually, got {mock_single.call_count}"
 
     output_lines = [json.loads(line) for line in buf.getvalue().splitlines() if line.strip()]
-    assert any(line.get("type") == "warning" and "Batch write notice" in line.get("message", "") for line in output_lines)
+    assert any(line.get("type") == "warning" and "批量写入未完成" in line.get("message", "") for line in output_lines)
     assert any(line.get("type") == "success" for line in output_lines)
     print(f"✓ cmd_flash_passthm fallback verified ({mock_single.call_count} individual writes after batch failure)")
 

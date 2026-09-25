@@ -1,0 +1,10 @@
+Usage: apply_card_skin.py <udid> <image_path> [card_hash ...]	用法：apply_card_skin.py <设备标识> <图片路径> [卡片标识 ...]
+Error: {img_path} not found	错误：找不到 {img_path}
+Loaded image from batter: {len(img_data)} bytes	已载入图片：{len(img_data)} 字节
+Targeting {len(hashes)} cards on device {udid}...	将在设备 {udid} 上更新 {len(hashes)} 张卡片…
+\n[{index}/{len(hashes)}] Processing card: {h}	\n[{index}/{len(hashes)}] 正在处理卡片：{h}
+  -> Writing card artwork (fast batch)...	  -> 正在批量写入卡面图片…
+     Result: {'SUCCESS' if ok_batch else 'FAILED'}	     结果：{'成功' if ok_batch else '失败'}
+  -> Invalidating pass cache...	  -> 正在刷新卡片缓存…
+     Result: {'SUCCESS' if ok_cache else 'FAILED (or cache already empty)'}	     结果：{'成功' if ok_cache else '失败（或缓存本来就是空的）'}
+\nAll done! Please force close Wallet on your iPhone and reopen it.	\n全部完成！请在 iPhone 上强制关闭“钱包”，再重新打开。

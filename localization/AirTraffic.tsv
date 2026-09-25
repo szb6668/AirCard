@@ -1,0 +1,8 @@
+usage: airtraffic_host udid id path [id path ...]	用法：airtraffic_host 设备标识 素材标识 路径 [素材标识 路径 ...]
+too many assets	素材数量过多
+empty argument	参数不能为空
+empty device identifier	设备标识不能为空
+AirTraffic connection failed	AirTraffic 连接失败
+SyncAllowed not observed	设备未允许同步
+ReadyForSync not observed	设备尚未准备好同步
+expected assets absent from manifest	同步清单中缺少预期素材

@@ -1,0 +1,222 @@
+Apple Wallet	钱包卡片
+Passcode (.passthm)	密码键盘主题
+Apply .passthm	应用主题包
+Theme Creator	主题制作
+Poster Slice (Puzzle)	海报拼图
+Individual Keys	逐键设置
+All Languages (Universal)	所有语言（通用）
+Ukrainian (uk)	乌克兰语（uk）
+Russian (ru)	俄语（ru）
+English (en)	英语（en）
+Other / Fallback	其他语言／兼容模式
+Spanish (es)	西班牙语（es）
+German (de)	德语（de）
+French (fr)	法语（fr）
+Polish (pl)	波兰语（pl）
+Italian (it)	意大利语（it）
+Portuguese (pt)	葡萄牙语（pt）
+Turkish (tr)	土耳其语（tr）
+Japanese (ja)	日语（ja）
+Korean (ko)	韩语（ko）
+Chinese (zh)	中文（zh）
+Arabic (ar)	阿拉伯语（ar）
+Hebrew (he)	希伯来语（he）
+Universal (Regular + Bold)	常规与粗体（通用）
+Bold Text Only (Fast)	仅粗体（快速）
+Regular Font Only (Fast)	仅常规字重（快速）
+Failed to create .passthm zip archive (exit code \(process.terminationStatus))	无法生成 .passthm 主题包（退出代码：\(process.terminationStatus)）
+Failed to stage temporary theme: \(error)	无法准备临时主题：\(error)
+Ready	准备就绪
+Loaded \(cards.count) real card(s) from storage.	已从本地记录读取 \(cards.count) 张卡片。
+Added card: \(clean)	已添加卡片：\(clean)
+Removed card: \(id)	已移除卡片：\(id)
+Cleared all cards.	已清空卡片列表。
+Assigned custom skin to card: \(cardId.prefix(12))...	已为卡片 \(cardId.prefix(12))… 设置卡面。
+Cleared custom skin for: \(cardId.prefix(12))...	已移除卡片 \(cardId.prefix(12))… 的自定义卡面。
+Checking connected devices...	正在检查已连接的设备…
+Connected to \(dev.name ?? "iPhone")	已连接 \(dev.name ?? "iPhone")
+Device connected: \(dev.name ?? "iPhone") (\(dev.product ?? ""), iOS \(dev.version ?? ""))	设备已连接：\(dev.name ?? "iPhone")（\(dev.product ?? "")，iOS \(dev.version ?? "")）
+Device tools are missing from this build.	此版本缺少设备连接组件。
+Bundled device_helper not found — detection cannot run.	找不到内置的 device_helper，无法识别设备。
+No iPhone found. Please connect via USB.	未找到 iPhone，请用 USB 连接并解锁。
+Device detection failed: \(error.localizedDescription)	设备识别失败：\(error.localizedDescription)
+  ⚡ Auto-configured passcode target: \(self.targetTelephonyVersion), language: \(self.passcodeLanguageTarget.rawValue), font: \(self.passcodeBoldTarget.rawValue)	  ⚡ 已根据设备设置密码键盘目标：\(self.targetTelephonyVersion)；语言：\(self.passcodeLanguageTarget.rawValue)；字重：\(self.passcodeBoldTarget.rawValue)
+Bundled device_helper not found — cannot scan.	找不到内置的 device_helper，无法扫描卡片。
+No iPhone connected.	未连接 iPhone。
+Double-click Side button, pass Face ID, then tap your card...	请双击侧边按钮，通过面容 ID 验证，再点选卡片…
+Started scanning device logs for cards...	已开始从设备日志识别卡片…
+Could not start card scanning.	无法开始识别卡片。
+Syslog monitor failed to start: \(error.localizedDescription)	设备日志读取未能启动：\(error.localizedDescription)
+Found card: \(candidate)	已识别卡片：\(candidate)
+Card scanning ended. Check the log and reconnect the iPhone to retry.	卡片识别已停止。请查看日志，重新连接 iPhone 后再试。
+Syslog monitor exited (status \(proc.terminationStatus)). Total cards: \(self.cards.count).	设备日志读取已退出（状态 \(proc.terminationStatus)），共识别 \(self.cards.count) 张卡片。
+Syslog monitor stopped: \(error.localizedDescription)	设备日志读取已停止：\(error.localizedDescription)
+Card scanning failed. Check the log and retry.	卡片识别失败，请查看日志后重试。
+Scanning stopped. Total cards: \(cards.count).	已停止识别，共 \(cards.count) 张卡片。
+Please assign a skin image to at least one selected card.	请先为至少一张已选卡片添加图片。
+Starting skin application for \(selectedCardsWithSkin.count) card(s)...	开始为 \(selectedCardsWithSkin.count) 张卡片写入新卡面…
+[\(idx + 1)/\(selectedCardsWithSkin.count)] Preparing skin for \(card.id.prefix(10))...	[\(idx + 1)/\(selectedCardsWithSkin.count)] 正在处理卡片 \(card.id.prefix(10))… 的图片…
+Flashing card [\(idx + 1)/\(selectedCardsWithSkin.count)]: \(card.id)	正在写入第 \(idx + 1)/\(selectedCardsWithSkin.count) 张卡片：\(card.id)
+Failed to launch card flasher: \(message)	无法启动卡面写入程序：\(message)
+Card update failed for \(card.id.prefix(12))...	卡片 \(card.id.prefix(12))… 更新失败。
+Failed to apply card skins.	卡面写入失败。
+One or more cards could not be updated. Check the log and try again.	部分卡片更新失败。请查看日志后重试。
+Skin application stopped after a card update failed.	卡片更新失败，已停止后续写入。
+Complete! All cards updated.	写入完成，所有卡片已更新。
+Skins successfully applied to all selected cards!	已为所有选中卡片写入新卡面！
+Loaded passcode theme '\(name)' (\(fileCount) assets)	已载入密码键盘主题“\(name)”（\(fileCount) 个素材）
+Loaded .passthm: \(name) [\(detectedVersion)] with \(fileCount) image assets	已载入 .passthm：\(name)［\(detectedVersion)］，包含 \(fileCount) 个图片素材
+Failed to inspect .passthm file	无法读取 .passthm 主题包。
+Please connect and trust your iPhone first.	请先连接 iPhone，并在手机上选择“信任此电脑”。
+Starting passcode theme flash...	正在准备写入密码键盘主题…
+Flashing passcode theme '\(theme.name)' to device...	正在向设备写入密码键盘主题“\(theme.name)”…
+Passcode theme applied successfully!	密码键盘主题已应用！
+Passcode theme '\(theme.name)' successfully flashed!	密码键盘主题“\(theme.name)”写入成功！
+Flashing failed (exit code \(exitCode))	写入失败（退出代码：\(exitCode)）
+ERROR: \(err)	错误：\(err)
+Poster image loaded · Ready to frame and slice	图片已导入，可调整位置并制作键盘主题
+Updated key \(digit) · Drag on dialer to reposition or use zoom slider	已更新数字键 \(digit)。可拖动预览调整位置，或用滑块缩放
+Cleared key \(digit)	已清除数字键 \(digit) 的图片
+Cleared all custom keys	已清除所有数字键图片
+Adopted poster slices to individual keys	已将海报图片分别填入各数字键
+Loaded '\(theme.name)' into Theme Creator (\(theme.keysPreview.count) keys ready to edit)	已将“\(theme.name)”导入主题制作（\(theme.keysPreview.count) 个键位可编辑）
+Imported theme '\(theme.name)' into Creator for custom editing	已将主题“\(theme.name)”导入编辑器
+Theme Creator reset	主题制作已重置
+Please add at least one key icon or import a poster image first.	请先导入一张海报图片，或为至少一个数字键添加图片。
+Failed to package theme for flashing.	无法生成待写入的主题包。
+Created Theme	自制主题
+Remove skin	移除卡面图片
+Change Skin	更换卡面图片
+Drop image here	将图片拖到这里
+Assign Card Skin	设置卡面图片
+Click to browse or drag image	点击选择，或直接拖入图片
+Include in flash	选中后会写入手机
+Card #\(cardIndex + 1)	第 \(cardIndex + 1) 张卡片
+Copied!	已复制！
+Copy full hash	复制完整卡片标识
+Skin assigned and ready	已设置卡面图片，可以写入
+Remove from list	从列表中移除
+Success!	操作成功
+OK	确定
+Passcode theme successfully applied!\n\nLock your iPhone (or restart) to see your new passcode keypad.	密码键盘主题已应用！\n\n锁定 iPhone 后查看效果；如未更新，请重启手机。
+Skins successfully applied to all selected cards!\n\nPlease force-close the Wallet app on your iPhone (or reboot) to see your new designs.	已为所有选中卡片写入新卡面！\n\n请在 iPhone 上强制关闭“钱包”后重新打开；如仍未更新，请重启手机。
+Wallet Cards & Passcode Themes	钱包卡面与密码键盘主题
+No iPhone (USB)	未连接 iPhone（USB）
+Refresh device connection	重新检测设备连接
+Credits	关于与致谢
+Stop Scanning	停止识别
+Scan Cards	识别卡片
+Add Manually	手动添加
+Set Skin for All...	批量设置卡面…
+Assign one skin to all selected cards	给所有选中卡片使用同一张图片
+Select All	全选
+Deselect All	取消全选
+Clear All	清空全部
+Live Scanner Active	正在识别卡片
+Double-click Side button (Apple Pay), pass Face ID, then tap your card.	请在 iPhone 上双击侧边按钮打开 Apple Pay，通过面容 ID 验证后点选卡片。
+Done	完成
+No Cards Detected Yet	还没有识别到卡片
+Click **Scan Cards** in the toolbar above.	点击上方工具栏的**识别卡片**。
+On your iPhone, **double-click the Side button** (Apple Pay), authenticate with **Face ID**, and **tap your card**.	在 iPhone 上**双击侧边按钮**打开 Apple Pay，通过**面容 ID**验证，然后**点选卡片**。
+Your card will be detected immediately!	点选后，卡片就会出现在这里。
+Start Scanning	开始识别
+Add Hashes Manually	手动添加卡片标识
+Choose .passthm File...	选择 .passthm 文件…
+Choose Poster...	选择海报图片…
+Change Poster...	更换海报图片…
+Export .passthm...	导出 .passthm…
+Target:	目标版本：
+Universal (All 8, 9, 10)	兼容全部版本（8、9、10）
+Clear Theme	清除主题
+Lock Screen Keypad Preview	锁屏密码键盘预览
+Custom Theme Loaded	已载入自制主题
+Passcode Theme File	密码键盘主题文件
+\(theme.fileCount) artwork assets loaded · Ready to flash to iPhone	已载入 \(theme.fileCount) 个图片素材，可以写入 iPhone
+Edit in Creator	在主题制作中编辑
+Change...	更换…
+Clear	清除
+Drop .passthm file here	将 .passthm 文件拖到这里
+Supports .passthm, .passtheme, or .zip packages from Cowabunga or Nugget	支持 Cowabunga 或 Nugget 的 .passthm、.passtheme 和 .zip 主题包
+Choose File...	选择文件…
+Interactive iPhone Lock Screen Preview	iPhone 锁屏交互预览
+Drag dialer to pan · Use slider to zoom	拖动键盘调整位置，用滑块缩放
+Poster Artwork	海报图片
+Artwork Loaded	图片已导入
+Remove	移除
+Drop poster or wallpaper here	将海报或壁纸拖到这里
+Choose Image...	选择图片…
+Slicing Style	图片铺设方式
+Seamless Poster	连续海报
+Circle Buttons	圆形按键
+Artwork is clipped into individual circular button icons.	图片会裁成各个圆形按键。
+Seamless artwork spans across dialer keys without circular cuts (Adobe Dog style).	整张图片会连续铺在数字键上，不单独裁成圆形。
+Zoom & Framing	缩放与位置
+Reset Position	重置位置
+Zoom	缩放
+Drag anywhere on the dialer preview to reposition	拖动键盘预览中的图片可调整位置
+Deselect Key \(sel)	取消选中数字键 \(sel)
+Key \(selDigit) Framing	数字键 \(selDigit) 的图片位置
+Reset	重置
+Drag Key \(selDigit) on dialer preview to reposition	在键盘预览中拖动数字键 \(selDigit) 可调整位置
+Change Image...	更换图片…
+Click any key on the dialer to select it, pan the image, adjust zoom, or drop files.	点击数字键即可选中；可拖动图片、调整缩放，或直接拖入文件。
+\(vm.creatorCustomKeys.count) of 10 keys configured	已设置 \(vm.creatorCustomKeys.count)/10 个数字键
+Fill from Poster	用海报填充
+Clear All Keys	清空所有数字键
+Change Key \(btn.digit)...	更换数字键 \(btn.digit) 的图片…
+Reset Position & Zoom	重置位置与缩放
+Clear Key \(btn.digit)	清除数字键 \(btn.digit)
+Enter Passcode	输入密码
+Emergency	紧急呼叫
+Cancel	取消
+Flash & Language Target	写入范围与语言
+Auto-detect	自动识别
+Reset to iPhone's detected language and font style	恢复为 iPhone 当前的语言和字重设置
+System Language:	系统语言：
+Font Weight / Style:	字体字重：
+Universal mode flashes ~600 files for all languages & Bold text. Selecting a specific language (e.g. Ukrainian) speeds up flashing dramatically.	通用模式会写入约 600 个文件，覆盖各语言和粗体设置。选定手机当前语言可大幅缩短写入时间。
+Fast mode selected: only targets \(vm.passcodeLanguageTarget.rawValue) with \(vm.passcodeBoldTarget.rawValue).	已启用快速模式：仅写入\(vm.passcodeLanguageTarget.rawValue)、\(vm.passcodeBoldTarget.rawValue)对应的素材。
+Activity Log	操作日志
+Theme Creator · \(count) of 10 keys configured · Target: \(targetInfo)	主题制作 · 已设置 \(count)/10 个数字键 · 目标：\(targetInfo)
+Theme Creator · Import a poster or drop icons onto keys	主题制作 · 请导入海报，或将图片拖到数字键上
+\(theme.fileCount) source assets loaded · Target: \(targetInfo)	已载入 \(theme.fileCount) 个素材 · 目标：\(targetInfo)
+No .passthm loaded · Select a theme package to flash	尚未载入 .passthm · 请选择主题包
+\(vm.cards.filter { $0.isSelected }.count) of \(vm.cards.count) cards selected · \(readyToFlashCount) ready to flash	已选 \(vm.cards.filter { $0.isSelected }.count)/\(vm.cards.count) 张卡片 · \(readyToFlashCount) 张可写入
+Log	日志
+Flashing Passcode...	正在写入密码键盘…
+Flash to iPhone	写入 iPhone
+Flash Passcode Theme	写入密码键盘主题
+Flashing Cards...	正在写入卡面…
+Flash Skins (\(readyToFlashCount) Cards)	写入卡面（\(readyToFlashCount) 张）
+Flash Skins	写入卡面
+By	作者
+Apple Wallet Skins & Passcode Themes for iOS 18+	适用于 iOS 18 及以上版本的钱包卡面与密码键盘主题
+Developer:	开发者：
+Twitter / X	X（原 Twitter）
+Core Exploit:	底层技术：
+airlift (AirTraffic sync escape)	airlift（AirTraffic 同步机制漏洞）
+Passcode Themes:	密码键盘主题：
+.passthm standard (Cowabunga / Nugget)	兼容 Cowabunga / Nugget 的 .passthm 格式
+Close	关闭
+Add Card Hashes Manually	手动添加卡片标识
+Paste one or more card hashes (separated by spaces, commas, or newlines):	粘贴一个或多个卡片标识；可用空格、逗号或换行分隔：
+Add to List	添加到列表
+Choose a custom skin for card \(cardId.prefix(12))...	为卡片 \(cardId.prefix(12))… 选择图片
+Choose a skin to assign to all selected cards...	选择要用于所有选中卡片的图片
+Choose a .passthm passcode theme package...	选择 .passthm 密码键盘主题包
+Choose Poster Image	选择海报图片
+Select a wallpaper or photo to slice for the passcode keypad...	选择一张壁纸或照片，用来制作密码键盘主题
+Choose Icon for Key \(digit)	选择数字键 \(digit) 的图片
+Select an icon or image for key \(digit)...	选择要用于数字键 \(digit) 的图片
+Please configure at least one key before exporting.	请先设置至少一个数字键，再导出主题。
+Save Passcode Theme	保存密码键盘主题
+Export	导出
+CustomTheme.passthm	自制主题.passthm
+Theme exported successfully to \(url.lastPathComponent)	主题已导出为 \(url.lastPathComponent)
+Exported .passthm to \(url.path)	已将 .passthm 导出到 \(url.path)
+Failed to export theme: \(error.localizedDescription)	导出主题失败：\(error.localizedDescription)
+AirCard scanner: 	AirCard 扫描器：
+TelephonyUI-10 (iOS 18+)	TelephonyUI-10（iOS 18 及以上）
+TelephonyUI-9 (iOS 16–17)	TelephonyUI-9（iOS 16–17）
+TelephonyUI-8 (iOS 14–15)	TelephonyUI-8（iOS 14–15）
+  [err] \(text)	  [错误] \(text)

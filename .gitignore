@@ -7,4 +7,5 @@ __pycache__/
 build/
 .tmp/
 *.dmg
+!dist/AirCard-v1.2.4-简体中文.dmg
 .serena/
